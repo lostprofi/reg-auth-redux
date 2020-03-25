@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ae0cba677fe3334f78ed6a1cdb808ba1",
+    "revision": "726ed7923d41ed2b9da49f55357fb6eb",
     "url": "/reg-auth-redux/index.html"
   },
   {
-    "revision": "4631991b24a1cd606a37",
+    "revision": "38a07a0b7a3e8abdd172",
     "url": "/reg-auth-redux/static/css/main.551b3172.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reg-auth-redux/static/js/2.ea2f3890.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4631991b24a1cd606a37",
-    "url": "/reg-auth-redux/static/js/main.c6c22d38.chunk.js"
+    "revision": "38a07a0b7a3e8abdd172",
+    "url": "/reg-auth-redux/static/js/main.0d75e091.chunk.js"
   },
   {
     "revision": "190f2730bdb1c873d368",
