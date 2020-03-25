@@ -1,0 +1,11 @@
+.form-group{
+    &__span {
+        display: block;
+        color: rgb(255, 0, 0);
+        font-weight: bold;
+    }
+
+    &_invalid {
+        color: rgb(255,0,0);
+    }
+}

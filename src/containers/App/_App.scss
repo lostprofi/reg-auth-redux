@@ -1,0 +1,23 @@
+.header{
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
+    background-color: rgb(243, 242, 242);
+
+    &__btn {
+        &:first-child{
+            margin-right: 8px;
+        }
+
+        &:last-child{
+            margin-left: 8px;
+        }
+    }    
+}
+
+.content {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
