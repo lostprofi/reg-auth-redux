@@ -53,6 +53,21 @@ const Reg = (props) => {
       }
     }
 
+    if (validation.unique) {
+      if (prop.users.length === 0) {
+        isValid = true && isValid;
+      } else {
+        isValid =
+          prop.users.some((el) => {
+            return el.userEmail !== value;
+          }) && isValid;
+        if (isValid === false && value !== '') {
+          errorMessage = 'Email does exist';
+        }
+      }
+
+    }
+
     if (validation.email) {
       isValid = validateEmail(value) && isValid;
       if (isValid === false && value !== '') {
@@ -60,15 +75,6 @@ const Reg = (props) => {
       }
     }
 
-    if (validation.unique) {
-      prop.users.forEach((element) => {
-        isValid = element.userEmail !== value && isValid;
-
-        if (isValid === false && value !== '') {
-          errorMessage = 'Email already exists';
-        }
-      });
-    }
     return { isValid, errorMessage };
   };
 

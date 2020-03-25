@@ -9,14 +9,10 @@ const Auth = (props) => {
 
   const history = useHistory();
 
-  console.log(prop.store);
-
-
   function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
   }
-
 
   const validateControl = (value, validation) => {
     let isValid = true;
@@ -28,31 +24,30 @@ const Auth = (props) => {
 
     if (validation.required) {
       isValid = value.trim() !== '' && isValid;
-      if (isValid === false && value !== '') {
+      if (isValid === false && value === '') {
         errorMessage = 'Fill in the field';
       }
     }
 
     if (validation.email) {
       isValid = validateEmail(value) && isValid;
-      if (isValid === false && value !== '') {
+      if (isValid === false && value !== "") {
         errorMessage = 'Email does not exist';
       }
     }
 
     if (validation.exist) {
-      prop.users.forEach((element) => {
-        isValid = element.userEmail === value && isValid;
-
-        if (isValid === false && value !== '') {
-          errorMessage = 'Email is not registered';
-        }
+      isValid = prop.users.some((element) => {
+        return element.userEmail === value;
       });
+
+      if (isValid === false && value !== '') {
+        errorMessage = 'Email is not registered';
+      }
     }
 
     return { isValid, errorMessage };
   };
-
 
   const handleChange = (event) => {
     const inputValue = event.target.value;
